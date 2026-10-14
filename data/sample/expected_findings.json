@@ -1,0 +1,281 @@
+{
+  "project": "Desert Ridge Medical Office Building",
+  "general_contractor": "Arroyo Peak Builders",
+  "note": "Fictional data. 'field_adjustments' are PM cuts made in the field: the tool accepts claimed progress, so certifiable minus certified equals these amounts.",
+  "applications": [
+    {
+      "sub_id": "mech",
+      "app_no": 1,
+      "period_to": "2026-01-31",
+      "clean": true,
+      "planted": [],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "mech",
+      "app_no": 2,
+      "period_to": "2026-02-28",
+      "clean": false,
+      "planted": [
+        {
+          "error": "math error",
+          "description": "Spreadsheet formula on sanitary waste & vent adds $10,000 to G that isn't in D+E+F.",
+          "expected_findings": [
+            {
+              "rule_id": "R01",
+              "severity": "error",
+              "item_no": "06",
+              "column": "G"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "mech",
+      "app_no": 3,
+      "period_to": "2026-03-31",
+      "clean": false,
+      "planted": [
+        {
+          "error": "stored materials",
+          "description": "Rooftop units delivered and stored on site: $220,500 billed in column F.",
+          "expected_findings": [
+            {
+              "rule_id": "R07",
+              "severity": "warning",
+              "item_no": "08",
+              "column": "F"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "mech",
+      "app_no": 4,
+      "period_to": "2026-04-30",
+      "clean": false,
+      "planted": [
+        {
+          "error": "billing on a pending CO",
+          "description": "Bills 50% of pending CO-03 on its own line and adds it to G702 line 2.",
+          "expected_findings": [
+            {
+              "rule_id": "R05",
+              "severity": "error",
+              "item_no": "CO-03",
+              "column": "G"
+            },
+            {
+              "rule_id": "R08",
+              "severity": "error",
+              "item_no": null,
+              "column": "L2"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "mech",
+      "app_no": 5,
+      "period_to": "2026-05-31",
+      "clean": false,
+      "planted": [
+        {
+          "error": "over-billed line",
+          "description": "Domestic water piping billed at 104% of its scheduled value with no change order.",
+          "expected_findings": [
+            {
+              "rule_id": "R04",
+              "severity": "error",
+              "item_no": "05",
+              "column": "G"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "elec",
+      "app_no": 1,
+      "period_to": "2026-01-31",
+      "clean": true,
+      "planted": [],
+      "field_adjustments": [
+        {
+          "item_no": "05",
+          "amount": "30000.00",
+          "reason": "PM field verification: branch rough-in is 20%, not 27.6%"
+        }
+      ]
+    },
+    {
+      "sub_id": "elec",
+      "app_no": 2,
+      "period_to": "2026-02-28",
+      "clean": false,
+      "planted": [
+        {
+          "error": "wrong from-previous",
+          "description": "Carries its own application 1 billing on branch rough-in into D, not the GC's certified amount (the PM cut $30,000 on application 1).",
+          "expected_findings": [
+            {
+              "rule_id": "R03",
+              "severity": "error",
+              "item_no": "05",
+              "column": "D"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "elec",
+      "app_no": 3,
+      "period_to": "2026-03-31",
+      "clean": false,
+      "planted": [
+        {
+          "error": "missed retainage reduction",
+          "description": "Work passes 50% complete but retainage is still held at 10% instead of 5%.",
+          "expected_findings": [
+            {
+              "rule_id": "R06",
+              "severity": "error",
+              "item_no": null,
+              "column": "I"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "elec",
+      "app_no": 4,
+      "period_to": "2026-04-30",
+      "clean": true,
+      "planted": [],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "elec",
+      "app_no": 5,
+      "period_to": "2026-05-31",
+      "clean": false,
+      "planted": [
+        {
+          "error": "billing on a CO not in the log",
+          "description": "Bills CO-E07 (EV charger circuits) which isn't in the change order log, and adds it to G702 line 2.",
+          "expected_findings": [
+            {
+              "rule_id": "R05",
+              "severity": "error",
+              "item_no": "CO-E07",
+              "column": "G"
+            },
+            {
+              "rule_id": "R08",
+              "severity": "error",
+              "item_no": null,
+              "column": "L2"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "dryw",
+      "app_no": 1,
+      "period_to": "2026-01-31",
+      "clean": true,
+      "planted": [],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "dryw",
+      "app_no": 2,
+      "period_to": "2026-02-28",
+      "clean": false,
+      "planted": [
+        {
+          "error": "front-loaded general conditions",
+          "description": "General conditions billed at 65% while the rest of the work is about 21% complete.",
+          "expected_findings": [
+            {
+              "rule_id": "R09",
+              "severity": "warning",
+              "item_no": "01",
+              "column": "pct"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": [
+        {
+          "item_no": "01",
+          "amount": "30240.00",
+          "reason": "PM holds general conditions to 20%, in line with the work"
+        }
+      ]
+    },
+    {
+      "sub_id": "dryw",
+      "app_no": 3,
+      "period_to": "2026-03-31",
+      "clean": false,
+      "planted": [
+        {
+          "error": "G702 doesn't tie",
+          "description": "G702 line 4 keyed $9,000 higher than the G703 total; lines 6, 8 and 9 follow it.",
+          "expected_findings": [
+            {
+              "rule_id": "R08",
+              "severity": "error",
+              "item_no": null,
+              "column": "L4"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "dryw",
+      "app_no": 4,
+      "period_to": "2026-04-30",
+      "clean": true,
+      "planted": [],
+      "field_adjustments": []
+    },
+    {
+      "sub_id": "dryw",
+      "app_no": 5,
+      "period_to": "2026-05-31",
+      "clean": false,
+      "planted": [
+        {
+          "error": "duplicate line",
+          "description": "Acoustical ceilings row pasted twice on the G703.",
+          "expected_findings": [
+            {
+              "rule_id": "R10",
+              "severity": "error",
+              "item_no": "07",
+              "column": "A"
+            }
+          ]
+        }
+      ],
+      "field_adjustments": []
+    }
+  ]
+}

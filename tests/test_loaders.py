@@ -161,3 +161,36 @@ def test_subcontract_retainage_reduction_validation(
                 "retainage_reduction_threshold_pct": threshold,
             }
         )
+
+
+def test_sov_must_total_the_original_contract_sum(tmp_path: Path) -> None:
+    root = write_project(tmp_path)
+    (root / "sov.csv").write_text(
+        "sub_id,line_no,description,scheduled_value\nmech,01,Ductwork,90000.00\n"
+    )
+    with pytest.raises(LoadError, match=r"mech lines total 90000.00, but the original contract"):
+        load_review(root, "mech", 1)
+
+
+def test_duplicate_sov_line_and_co_number(tmp_path: Path) -> None:
+    root = write_project(tmp_path)
+    (root / "sov.csv").write_text(
+        "sub_id,line_no,description,scheduled_value\n"
+        "mech,01,Ductwork,50000.00\nmech,01,Piping,50000.00\n"
+    )
+    with pytest.raises(LoadError, match=r"sov.csv: duplicate line_no '01'"):
+        load_review(root, "mech", 1)
+    write_project(tmp_path / "b")
+    co = "CO-01,mech,Added duct,5000.00,pending,CO-01\n"
+    (tmp_path / "b" / "change_orders.csv").write_text(
+        "co_no,sub_id,description,amount,status,sov_line_no\n" + co + co
+    )
+    with pytest.raises(LoadError, match="duplicate co_no 'CO-01'"):
+        load_review(tmp_path / "b", "mech", 1)
+
+
+def test_sov_with_no_lines_for_sub(tmp_path: Path) -> None:
+    root = write_project(tmp_path)
+    (root / "sov.csv").write_text("sub_id,line_no,description,scheduled_value\n")
+    with pytest.raises(LoadError, match="no schedule-of-values lines"):
+        load_review(root, "mech", 1)

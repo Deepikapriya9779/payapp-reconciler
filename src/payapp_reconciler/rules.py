@@ -354,11 +354,11 @@ def check_g702(ctx: ReviewContext, finding: FindingFactory) -> Iterator[Finding]
         1: (review.subcontract.original_contract_sum, "the subcontract"),
         2: (
             net_change_by_change_orders(review.change_orders, as_of),
-            f"change orders approved by {as_of}",
+            f"change orders approved as of {as_of}; pending, rejected and unlogged COs don't count",
         ),
         3: (g.line(1) + g.line(2), "line 1 + line 2"),
         4: (sum((r.total_completed_stored for r in review.submitted), ZERO), "the G703 G total"),
-        5: (sum((r.retainage for r in review.submitted), ZERO), "the G703 I total"),
+        5: (sum((r.retainage for r in review.submitted), ZERO), "the G703 column I total"),
         6: (g.line(4) - g.line(5), "line 4 - line 5"),
         7: (prior_line_6, previous),
         8: (g.line(6) - g.line(7), "line 6 - line 7"),
@@ -376,8 +376,8 @@ def check_g702(ctx: ReviewContext, finding: FindingFactory) -> Iterator[Finding]
             expected=value,
             actual=claimed,
             dollar_impact=payment_sign.get(number, 0) * (claimed - value),
-            message=f"G702 line {number} ({label}) shows {fmt_money(claimed)}; "
-            f"{source} gives {fmt_money(value)}.",
+            message=f"G702 line {number} ({label}) shows {fmt_money(claimed)} but should be "
+            f"{fmt_money(value)} ({source}).",
         )
 
 

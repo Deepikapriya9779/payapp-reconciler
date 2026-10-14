@@ -1,0 +1,13 @@
+item_no,description,scheduled_value,from_previous,this_period,materials_stored,total_completed_stored,pct_complete,balance_to_finish,retainage
+01,General Conditions / Supervision,147000.00,0.00,14700.00,0.00,14700.00,10.00,132300.00,1470.00
+02,Mobilization,49000.00,0.00,49000.00,0.00,49000.00,100.00,0.00,4900.00
+03,Submittals & Coordination Drawings,36750.00,0.00,22050.00,0.00,22050.00,60.00,14700.00,2205.00
+04,Underground Plumbing,171500.00,0.00,85750.00,0.00,85750.00,50.00,85750.00,8575.00
+05,Domestic Water Piping,245000.00,0.00,0.00,0.00,0.00,0.00,245000.00,0.00
+06,Sanitary Waste & Vent,196000.00,0.00,19600.00,0.00,19600.00,10.00,176400.00,1960.00
+07,Ductwork - Fabricate & Install,539000.00,0.00,0.00,0.00,0.00,0.00,539000.00,0.00
+08,Rooftop Units & HVAC Equipment,441000.00,0.00,0.00,0.00,0.00,0.00,441000.00,0.00
+09,VAV Boxes & Building Controls,294000.00,0.00,0.00,0.00,0.00,0.00,294000.00,0.00
+10,Duct & Pipe Insulation,122500.00,0.00,0.00,0.00,0.00,0.00,122500.00,0.00
+11,Test & Balance,73500.00,0.00,0.00,0.00,0.00,0.00,73500.00,0.00
+12,"Startup, Commissioning & Closeout",134750.00,0.00,0.00,0.00,0.00,0.00,134750.00,0.00

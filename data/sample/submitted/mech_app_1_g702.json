@@ -1,0 +1,14 @@
+{
+  "sub_id": "mech",
+  "application_no": 1,
+  "period_to": "2026-01-31",
+  "original_contract_sum": "2450000.00",
+  "net_change_by_change_orders": "0.00",
+  "contract_sum_to_date": "2450000.00",
+  "total_completed_and_stored": "191100.00",
+  "retainage": "19110.00",
+  "total_earned_less_retainage": "171990.00",
+  "less_previous_certificates": "0.00",
+  "current_payment_due": "171990.00",
+  "balance_to_finish_including_retainage": "2278010.00"
+}

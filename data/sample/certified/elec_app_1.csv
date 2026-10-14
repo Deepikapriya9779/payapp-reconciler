@@ -1,0 +1,12 @@
+item_no,description,scheduled_value,from_previous,this_period,materials_stored,total_completed_stored,pct_complete,balance_to_finish,retainage
+01,General Conditions / Project Management,118800.00,0.00,17820.00,0.00,17820.00,15.00,100980.00,1782.00
+02,Mobilization,39600.00,0.00,39600.00,0.00,39600.00,100.00,0.00,3960.00
+03,Underground Conduit & Grounding,158400.00,0.00,110880.00,0.00,110880.00,70.00,47520.00,11088.00
+04,Service Entrance & Switchgear,316800.00,0.00,0.00,0.00,0.00,0.00,316800.00,0.00
+05,Branch Rough-In,396000.00,0.00,79200.00,0.00,79200.00,20.00,316800.00,7920.00
+06,Feeders & Panelboards,237600.00,0.00,0.00,0.00,0.00,0.00,237600.00,0.00
+07,Lighting Fixtures & Controls,277200.00,0.00,0.00,0.00,0.00,0.00,277200.00,0.00
+08,Fire Alarm System,138600.00,0.00,0.00,0.00,0.00,0.00,138600.00,0.00
+09,Low Voltage Rough-In,99000.00,0.00,0.00,0.00,0.00,0.00,99000.00,0.00
+10,Devices & Trim-Out,118800.00,0.00,0.00,0.00,0.00,0.00,118800.00,0.00
+11,"Testing, Closeout & O&M Manuals",79200.00,0.00,0.00,0.00,0.00,0.00,79200.00,0.00

@@ -1,0 +1,14 @@
+{
+  "sub_id": "dryw",
+  "application_no": 1,
+  "period_to": "2026-01-31",
+  "original_contract_sum": "1120000.00",
+  "net_change_by_change_orders": "0.00",
+  "contract_sum_to_date": "1120000.00",
+  "total_completed_and_stored": "87920.00",
+  "retainage": "8792.00",
+  "total_earned_less_retainage": "79128.00",
+  "less_previous_certificates": "0.00",
+  "current_payment_due": "79128.00",
+  "balance_to_finish_including_retainage": "1040872.00"
+}

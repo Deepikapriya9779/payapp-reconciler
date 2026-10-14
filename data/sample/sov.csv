@@ -1,0 +1,32 @@
+sub_id,line_no,description,scheduled_value
+mech,01,General Conditions / Supervision,147000.00
+mech,02,Mobilization,49000.00
+mech,03,Submittals & Coordination Drawings,36750.00
+mech,04,Underground Plumbing,171500.00
+mech,05,Domestic Water Piping,245000.00
+mech,06,Sanitary Waste & Vent,196000.00
+mech,07,Ductwork - Fabricate & Install,539000.00
+mech,08,Rooftop Units & HVAC Equipment,441000.00
+mech,09,VAV Boxes & Building Controls,294000.00
+mech,10,Duct & Pipe Insulation,122500.00
+mech,11,Test & Balance,73500.00
+mech,12,"Startup, Commissioning & Closeout",134750.00
+elec,01,General Conditions / Project Management,118800.00
+elec,02,Mobilization,39600.00
+elec,03,Underground Conduit & Grounding,158400.00
+elec,04,Service Entrance & Switchgear,316800.00
+elec,05,Branch Rough-In,396000.00
+elec,06,Feeders & Panelboards,237600.00
+elec,07,Lighting Fixtures & Controls,277200.00
+elec,08,Fire Alarm System,138600.00
+elec,09,Low Voltage Rough-In,99000.00
+elec,10,Devices & Trim-Out,118800.00
+elec,11,"Testing, Closeout & O&M Manuals",79200.00
+dryw,01,General Conditions / Supervision,67200.00
+dryw,02,Mobilization,22400.00
+dryw,03,Metal Stud Framing,302400.00
+dryw,04,Exterior Sheathing & Weather Barrier,134400.00
+dryw,05,Gypsum Board - Hang,246400.00
+dryw,06,Tape & Finish (Level 5 at Lobby),179200.00
+dryw,07,Acoustical Ceilings,123200.00
+dryw,08,Shaft Wall & Fire-Rated Assemblies,44800.00

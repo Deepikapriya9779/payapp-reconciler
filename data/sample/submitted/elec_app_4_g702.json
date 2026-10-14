@@ -1,0 +1,14 @@
+{
+  "sub_id": "elec",
+  "application_no": 4,
+  "period_to": "2026-04-30",
+  "original_contract_sum": "1980000.00",
+  "net_change_by_change_orders": "31200.00",
+  "contract_sum_to_date": "2011200.00",
+  "total_completed_and_stored": "1526490.00",
+  "retainage": "76324.50",
+  "total_earned_less_retainage": "1450165.50",
+  "less_previous_certificates": "1039680.00",
+  "current_payment_due": "410485.50",
+  "balance_to_finish_including_retainage": "561034.50"
+}

@@ -1,0 +1,11 @@
+item_no,description,scheduled_value,from_previous,this_period,materials_stored,total_completed_stored,pct_complete,balance_to_finish,retainage
+01,General Conditions / Supervision,67200.00,33600.00,10080.00,0.00,43680.00,65.00,23520.00,4368.00
+02,Mobilization,22400.00,22400.00,0.00,0.00,22400.00,100.00,0.00,2240.00
+03,Metal Stud Framing,302400.00,272160.00,30240.00,0.00,302400.00,100.00,0.00,30240.00
+04,Exterior Sheathing & Weather Barrier,134400.00,134400.00,0.00,0.00,134400.00,100.00,0.00,13440.00
+05,Gypsum Board - Hang,246400.00,147840.00,61600.00,0.00,209440.00,85.00,36960.00,20944.00
+06,Tape & Finish (Level 5 at Lobby),179200.00,71680.00,53760.00,0.00,125440.00,70.00,53760.00,12544.00
+07,Acoustical Ceilings,123200.00,18480.00,30800.00,0.00,49280.00,40.00,73920.00,4928.00
+07,Acoustical Ceilings,123200.00,18480.00,30800.00,0.00,49280.00,40.00,73920.00,4928.00
+08,Shaft Wall & Fire-Rated Assemblies,44800.00,35840.00,8960.00,0.00,44800.00,100.00,0.00,4480.00
+CO-D01,Added soffit framing at entry canopy,16800.00,16800.00,0.00,0.00,16800.00,100.00,0.00,1680.00

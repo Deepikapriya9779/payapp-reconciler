@@ -1,0 +1,4 @@
+sub_id,sub_name,trade,original_contract_sum,retainage_pct,retainage_reduced_pct,retainage_reduction_threshold_pct
+mech,Sonoran Air Mechanical,Mechanical (HVAC & Plumbing),2450000.00,10,5,50
+elec,Copperline Electric,Electrical,1980000.00,10,5,50
+dryw,Mesa Wall Systems,Framing & Drywall,1120000.00,10,,

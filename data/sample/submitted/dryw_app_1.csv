@@ -1,0 +1,9 @@
+item_no,description,scheduled_value,from_previous,this_period,materials_stored,total_completed_stored,pct_complete,balance_to_finish,retainage
+01,General Conditions / Supervision,67200.00,0.00,6720.00,0.00,6720.00,10.00,60480.00,672.00
+02,Mobilization,22400.00,0.00,22400.00,0.00,22400.00,100.00,0.00,2240.00
+03,Metal Stud Framing,302400.00,0.00,45360.00,0.00,45360.00,15.00,257040.00,4536.00
+04,Exterior Sheathing & Weather Barrier,134400.00,0.00,13440.00,0.00,13440.00,10.00,120960.00,1344.00
+05,Gypsum Board - Hang,246400.00,0.00,0.00,0.00,0.00,0.00,246400.00,0.00
+06,Tape & Finish (Level 5 at Lobby),179200.00,0.00,0.00,0.00,0.00,0.00,179200.00,0.00
+07,Acoustical Ceilings,123200.00,0.00,0.00,0.00,0.00,0.00,123200.00,0.00
+08,Shaft Wall & Fire-Rated Assemblies,44800.00,0.00,0.00,0.00,0.00,0.00,44800.00,0.00

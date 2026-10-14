@@ -1,0 +1,8 @@
+co_no,sub_id,description,amount,status,sov_line_no,approved_date
+CO-01,mech,Added exhaust ductwork at imaging suite,18400.00,approved,07,2026-02-15
+CO-02,mech,Medical gas piping at exam rooms,42600.00,approved,CO-02,2026-03-10
+CO-03,mech,"Added VAV zone, 2nd floor east",18500.00,pending,CO-03,
+CO-E01,elec,Upgraded LED fixtures at main lobby,31200.00,approved,07,2026-02-20
+CO-E02,elec,Temporary power extension to staging area,12800.00,rejected,CO-E02,
+CO-D01,dryw,Added soffit framing at entry canopy,16800.00,approved,CO-D01,2026-03-05
+CO-D02,dryw,Level 5 finish at corridor walls,22400.00,pending,CO-D02,
