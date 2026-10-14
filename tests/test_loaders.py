@@ -111,7 +111,7 @@ def test_empty_file(tmp_path: Path) -> None:
 def test_excel_bom_and_currency_formatting_are_accepted(tmp_path: Path) -> None:
     path = tmp_path / "app.csv"
     row = '01,Ductwork,"$100,000.00",0,"$25,000.00",0,25000,25%,75000,2500\n'
-    path.write_text("﻿" + G703_HEADER + row, encoding="utf-8")
+    path.write_text("\ufeff" + G703_HEADER + row, encoding="utf-8")
     [line] = read_csv(path, G703Row)
     assert line.scheduled_value == Decimal("100000.00")
     assert line.materials_stored == Decimal("0.00")
