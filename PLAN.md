@@ -1,5 +1,11 @@
 # payapp-reconciler — Build Plan
 
+> **Status:** built (milestones M0 to M7 are in the git history). Two additions came up during the
+> build: an optional `approved_date` column in `change_orders.csv`, so a historical application is
+> reviewed against the change orders approved as of its period end, and an optional
+> `project.json` for the project and GC names. The certifiable G703 lines were built in M2,
+> because rule R06 measures the retainage threshold on certifiable progress.
+
 Automated review of subcontractor pay applications (AIA G702/G703 progress billing) for GCs.
 
 **Core principle:** every number is computed deterministically in Python with `Decimal`. The LLM
