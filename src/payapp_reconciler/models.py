@@ -79,6 +79,20 @@ class ChangeOrder(_Row):
     amount: Money  # may be negative (deductive change order)
     status: COStatus
     sov_line_no: str = Field(min_length=1)
+    # The log shows today's status. The date lets a historical app be reviewed against the
+    # COs that were approved as of that app's period end. Blank = approved for every period.
+    approved_date: Annotated[dt.date | None, BeforeValidator(_blank_to_none)] = None
+
+    @model_validator(mode="after")
+    def _date_only_when_approved(self) -> ChangeOrder:
+        if self.approved_date is not None and self.status is not COStatus.APPROVED:
+            raise ValueError(f"approved_date is set but status is {self.status.value}")
+        return self
+
+    def approved_as_of(self, as_of: dt.date) -> bool:
+        return self.status is COStatus.APPROVED and (
+            self.approved_date is None or self.approved_date <= as_of
+        )
 
 
 # G703 column letter -> field name. Used for findings and for highlighting cells in Excel.
@@ -147,6 +161,24 @@ class G702Summary(_Row):
     def line(self, number: int) -> Decimal:
         value: Decimal = getattr(self, G702_LINES[number][0])
         return value
+
+
+# ---------------------------------------------------------------- certifiable
+
+
+class CertifiableLine(BaseModel):
+    """What the GC can certify on one line, rebuilt from trusted inputs."""
+
+    model_config = ConfigDict(frozen=True)
+
+    item_no: str
+    description: str
+    scheduled_value: Decimal  # SOV + approved COs as of the period end
+    from_previous: Decimal  # prior certificate D + E
+    this_period: Decimal  # as claimed, reduced if the line would exceed C
+    materials_stored: Decimal
+    total_completed_stored: Decimal
+    retainage: Decimal
 
 
 # ---------------------------------------------------------------- review config + findings

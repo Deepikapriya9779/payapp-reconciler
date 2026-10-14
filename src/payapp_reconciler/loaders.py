@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import csv
+import datetime as dt
 import json
 from dataclasses import dataclass
 from decimal import Decimal
@@ -32,6 +33,18 @@ class ReviewInput:
     prior_certified: list[G703Row] | None  # None on application 1
     submitted: list[G703Row]
     g702: G702Summary
+
+    @property
+    def period_to(self) -> dt.date:
+        return self.g702.period_to
+
+
+def _require_unique(label: str, keys: list[str], field: str) -> None:
+    seen: set[str] = set()
+    for key in keys:
+        if key in seen:
+            raise LoadError(f"{label}: duplicate {field} {key!r}")
+        seen.add(key)
 
 
 def _describe(err: ValidationError) -> str:
@@ -88,10 +101,19 @@ def load_review(project_dir: Path, sub_id: str, app_no: int) -> ReviewInput:
         known = ", ".join(sorted(subcontracts)) or "none"
         raise LoadError(f"subcontracts.csv: no subcontract with sub_id {sub_id!r} (known: {known})")
 
+    subcontract = subcontracts[sub_id]
     sov = [line for line in read("sov.csv", SovLine) if line.sub_id == sub_id]
     if not sov:
         raise LoadError(f"sov.csv: no schedule-of-values lines for sub_id {sub_id!r}")
+    _require_unique("sov.csv", [line.line_no for line in sov], "line_no")
+    sov_total = sum((line.scheduled_value for line in sov), Decimal("0"))
+    if sov_total != subcontract.original_contract_sum:
+        raise LoadError(
+            f"sov.csv: {sub_id} lines total {sov_total}, but the original contract sum in "
+            f"subcontracts.csv is {subcontract.original_contract_sum}"
+        )
     change_orders = [co for co in read("change_orders.csv", ChangeOrder) if co.sub_id == sub_id]
+    _require_unique("change_orders.csv", [co.co_no for co in change_orders], "co_no")
 
     prior = None
     if app_no > 1:
@@ -110,7 +132,7 @@ def load_review(project_dir: Path, sub_id: str, app_no: int) -> ReviewInput:
     return ReviewInput(
         project_dir=project_dir,
         app_no=app_no,
-        subcontract=subcontracts[sub_id],
+        subcontract=subcontract,
         sov=sov,
         change_orders=change_orders,
         prior_certified=prior,

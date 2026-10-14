@@ -68,3 +68,9 @@ def differs(a: Decimal, b: Decimal, tolerance: Decimal = CENT) -> bool:
 def fmt_money(value: Decimal) -> str:
     sign = "-" if value < 0 else ""
     return f"{sign}${abs(to_cents(value)):,.2f}"
+
+
+def fmt_pct(value: Decimal) -> str:
+    """10 -> "10%", 52.30 -> "52.3%", 33.33 -> "33.33%"."""
+    text = f"{round_half_up(value):.2f}".rstrip("0").rstrip(".")
+    return f"{text}%"
