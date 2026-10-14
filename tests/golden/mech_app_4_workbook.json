@@ -1,0 +1,376 @@
+{
+  "sheets": [
+    "Summary",
+    "Line Review",
+    "Findings"
+  ],
+  "freeze_panes": {
+    "Summary": "A2",
+    "Line Review": "C2",
+    "Findings": "A2"
+  },
+  "column_widths": {
+    "Line Review B": 38.0
+  },
+  "cells": {
+    "Summary": {
+      "A1": {
+        "value": "Pay Application Review"
+      },
+      "B3": {
+        "value": "Desert Ridge Medical Office Building"
+      },
+      "B4": {
+        "value": "Arroyo Peak Builders"
+      },
+      "B5": {
+        "value": "Sonoran Air Mechanical (mech)"
+      },
+      "B6": {
+        "value": "Mechanical (HVAC & Plumbing)"
+      },
+      "B7": {
+        "value": "4"
+      },
+      "B8": {
+        "value": "2026-04-30 00:00:00",
+        "format": "yyyy-mm-dd"
+      },
+      "B9": {
+        "value": "57.36",
+        "format": "0.00\"%\""
+      },
+      "B10": {
+        "value": "5",
+        "format": "0.00\"%\""
+      },
+      "A13": {
+        "value": "1"
+      },
+      "B13": {
+        "value": "Original Contract Sum"
+      },
+      "C13": {
+        "value": "2450000",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D13": {
+        "value": "2450000",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E13": {
+        "value": "0",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A14": {
+        "value": "2"
+      },
+      "B14": {
+        "value": "Net Change by Change Orders"
+      },
+      "C14": {
+        "value": "79500",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)",
+        "fill": "00FFC7CE",
+        "comment": "R08 G702 ties to G703 (error)"
+      },
+      "D14": {
+        "value": "61000",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E14": {
+        "value": "18500",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A15": {
+        "value": "3"
+      },
+      "B15": {
+        "value": "Contract Sum to Date"
+      },
+      "C15": {
+        "value": "2529500",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D15": {
+        "value": "2511000",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E15": {
+        "value": "18500",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A16": {
+        "value": "4"
+      },
+      "B16": {
+        "value": "Total Completed & Stored to Date"
+      },
+      "C16": {
+        "value": "1449450",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D16": {
+        "value": "1440200",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E16": {
+        "value": "9250",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A17": {
+        "value": "5"
+      },
+      "B17": {
+        "value": "Retainage"
+      },
+      "C17": {
+        "value": "72472.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D17": {
+        "value": "72010",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E17": {
+        "value": "462.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A18": {
+        "value": "6"
+      },
+      "B18": {
+        "value": "Total Earned Less Retainage"
+      },
+      "C18": {
+        "value": "1376977.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D18": {
+        "value": "1368190",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E18": {
+        "value": "8787.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A19": {
+        "value": "7"
+      },
+      "B19": {
+        "value": "Less Previous Certificates for Payment"
+      },
+      "C19": {
+        "value": "918391.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D19": {
+        "value": "918391.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E19": {
+        "value": "0",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A20": {
+        "value": "8"
+      },
+      "B20": {
+        "value": "Current Payment Due"
+      },
+      "C20": {
+        "value": "458586",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D20": {
+        "value": "449798.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E20": {
+        "value": "8787.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "A21": {
+        "value": "9"
+      },
+      "B21": {
+        "value": "Balance to Finish, Including Retainage"
+      },
+      "C21": {
+        "value": "1152522.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D21": {
+        "value": "1142810",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E21": {
+        "value": "9712.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      }
+    },
+    "Line Review": {
+      "A1": {
+        "value": "Item",
+        "fill": "001F3864"
+      },
+      "B1": {
+        "value": "Description of Work",
+        "fill": "001F3864"
+      },
+      "C1": {
+        "value": "Scheduled Value (C)",
+        "fill": "001F3864"
+      },
+      "D1": {
+        "value": "From Previous (D)",
+        "fill": "001F3864"
+      },
+      "E1": {
+        "value": "This Period (E)",
+        "fill": "001F3864"
+      },
+      "F1": {
+        "value": "Materials Stored (F)",
+        "fill": "001F3864"
+      },
+      "G1": {
+        "value": "Completed & Stored (G)",
+        "fill": "001F3864"
+      },
+      "H1": {
+        "value": "% (G / C)",
+        "fill": "001F3864"
+      },
+      "I1": {
+        "value": "Balance to Finish (H)",
+        "fill": "001F3864"
+      },
+      "J1": {
+        "value": "Retainage (I)",
+        "fill": "001F3864"
+      },
+      "K1": {
+        "value": "Certifiable G",
+        "fill": "001F3864"
+      },
+      "L1": {
+        "value": "Certifiable Retainage",
+        "fill": "001F3864"
+      },
+      "M1": {
+        "value": "G Over Certifiable",
+        "fill": "001F3864"
+      },
+      "G15": {
+        "value": "9250",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)",
+        "fill": "00FFC7CE",
+        "comment": "R05 Unapproved change order (error)"
+      },
+      "B16": {
+        "value": "Totals"
+      },
+      "C16": {
+        "value": "2529500",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "D16": {
+        "value": "799935",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "E16": {
+        "value": "649515",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "F16": {
+        "value": "0",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "G16": {
+        "value": "1449450",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "H16": {
+        "value": null
+      },
+      "I16": {
+        "value": "1080050",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "J16": {
+        "value": "72472.5",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "K16": {
+        "value": "1440200",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "L16": {
+        "value": "72010",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "M16": {
+        "value": "9250",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      }
+    },
+    "Findings": {
+      "B1": {
+        "value": "Rule",
+        "fill": "001F3864"
+      },
+      "D1": {
+        "value": "Severity",
+        "fill": "001F3864"
+      },
+      "E1": {
+        "value": "Item",
+        "fill": "001F3864"
+      },
+      "F1": {
+        "value": "Column / Line",
+        "fill": "001F3864"
+      },
+      "J1": {
+        "value": "Dollar Impact",
+        "fill": "001F3864"
+      },
+      "B2": {
+        "value": "R05"
+      },
+      "D2": {
+        "value": "error",
+        "fill": "00FFC7CE"
+      },
+      "E2": {
+        "value": "CO-03"
+      },
+      "F2": {
+        "value": "G"
+      },
+      "J2": {
+        "value": "9250",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      },
+      "B3": {
+        "value": "R08"
+      },
+      "D3": {
+        "value": "error",
+        "fill": "00FFC7CE"
+      },
+      "E3": {
+        "value": null
+      },
+      "F3": {
+        "value": "L2"
+      },
+      "J3": {
+        "value": "0",
+        "format": "\"$\"#,##0.00_);[Red](\"$\"#,##0.00)"
+      }
+    }
+  },
+  "summary_rows": 28
+}
