@@ -62,26 +62,30 @@ def template_memo(result: ReviewResult) -> str:
         f"**To:** {result.sub_name}  ",
         f"**From:** Project Accounting, {result.general_contractor}  ",
         f"**Project:** {result.project}  ",
-        f"**Re:** Pay Application No. {n} ({result.trade}), period ending {result.period_to}",
+        f"**Re:** {result.trade} Pay Application No. {n}, period ending {result.period_to}",
         "",
     ]
     errors = [f for f in result.findings if f.severity is Severity.ERROR]
     warnings = [f for f in result.findings if f.severity is Severity.WARNING]
     infos = [f for f in result.findings if f.severity is Severity.INFO]
-    previous = f" and our certificate for Application No. {n - 1}" if n > 1 else ""
+    sources = "the subcontract, the approved schedule of values"
+    sources += (
+        f", the change order log and our certificate for Application No. {n - 1}"
+        if n > 1
+        else " and the change order log"
+    )
 
     if not result.findings:
         lines += [
-            f"We reviewed Application No. {n} against the subcontract, the approved schedule of "
-            f"values and change orders{previous}. It ties out, and we will process the current "
+            f"We reviewed Application No. {n} against {sources}. It ties out, and we will "
+            "process the current "
             f"payment due of {fmt_money(result.certifiable_payment_due)} as submitted.",
         ]
         return "\n".join(lines) + "\n"
 
     lines += [
-        f"We reviewed Application No. {n} against the subcontract, the approved schedule of "
-        f"values and change orders{previous}. The items below need to be addressed before we "
-        "can certify the application as submitted.",
+        f"We reviewed Application No. {n} against {sources}. The items below need to be "
+        "addressed before we can certify the application as submitted.",
         "",
     ]
     if errors:
