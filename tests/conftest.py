@@ -178,3 +178,10 @@ def findings(r: ReviewInput, rule_id: str | None = None) -> list[Finding]:
 @pytest.fixture
 def clean() -> ReviewInput:
     return review()
+
+
+@pytest.fixture(autouse=True)
+def _no_network_llm(monkeypatch: pytest.MonkeyPatch) -> None:
+    """Tests never call the Anthropic API: force the template path unless a test injects a fake."""
+    monkeypatch.setenv("LLM_MODE", "mock")
+    monkeypatch.delenv("ANTHROPIC_API_KEY", raising=False)
