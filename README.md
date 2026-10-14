@@ -1,5 +1,7 @@
 # payapp-reconciler
 
+[![CI](https://github.com/Deepikapriya9779/payapp-reconciler/actions/workflows/ci.yml/badge.svg)](https://github.com/Deepikapriya9779/payapp-reconciler/actions/workflows/ci.yml)
+
 Automated review of subcontractor pay applications (AIA G702/G703 progress billing) for general
 contractors.
 
@@ -163,7 +165,7 @@ over-claimed. Variance is claimed minus certifiable current payment due.
 ## Quick start
 
 ```bash
-git clone <repo-url> payapp-reconciler && cd payapp-reconciler
+git clone https://github.com/Deepikapriya9779/payapp-reconciler.git && cd payapp-reconciler
 pip install -e ".[dev]"
 payapp-reconcile data/sample --sub mech --app 4 --memo
 ```
