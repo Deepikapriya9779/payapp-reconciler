@@ -10,7 +10,14 @@ from decimal import Decimal
 from enum import StrEnum
 from typing import Annotated
 
-from pydantic import BaseModel, BeforeValidator, ConfigDict, Field, model_validator
+from pydantic import (
+    BaseModel,
+    BeforeValidator,
+    ConfigDict,
+    Field,
+    computed_field,
+    model_validator,
+)
 
 from .money import ZERO, parse_decimal, parse_money
 
@@ -41,6 +48,13 @@ class Severity(StrEnum):
 
 
 # ---------------------------------------------------------------- inputs
+
+
+class ProjectInfo(_Row):
+    """Optional project.json. Used for headings in the workbook and memo."""
+
+    name: str
+    general_contractor: str = "General Contractor"
 
 
 class Subcontract(_Row):
@@ -211,3 +225,64 @@ class Finding(BaseModel):
     expected: Decimal | None = None
     actual: Decimal | None = None
     dollar_impact: Decimal = ZERO
+
+
+# ---------------------------------------------------------------- review result
+
+
+class G702Line(BaseModel):
+    """One G702 line: what the sub claimed next to what the GC can certify."""
+
+    model_config = ConfigDict(frozen=True)
+
+    line: int
+    label: str
+    claimed: Decimal
+    certifiable: Decimal
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def variance(self) -> Decimal:
+        return self.claimed - self.certifiable
+
+
+class ReviewResult(BaseModel):
+    """Everything the review produced. Serialized as findings.json."""
+
+    model_config = ConfigDict(frozen=True)
+
+    project: str
+    general_contractor: str
+    sub_id: str
+    sub_name: str
+    trade: str
+    application_no: int
+    period_to: dt.date
+    contract_sum_to_date: Decimal
+    certifiable_pct_complete: Decimal
+    retainage_rate: Decimal
+    g702: list[G702Line]
+    certifiable_lines: list[CertifiableLine]
+    findings: list[Finding]
+
+    def g702_line(self, number: int) -> G702Line:
+        return next(line for line in self.g702 if line.line == number)
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def claimed_payment_due(self) -> Decimal:
+        return self.g702_line(8).claimed
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def certifiable_payment_due(self) -> Decimal:
+        return self.g702_line(8).certifiable
+
+    @computed_field  # type: ignore[prop-decorator]
+    @property
+    def variance(self) -> Decimal:
+        """Claimed minus certifiable current payment due. Positive = the sub over-claimed."""
+        return self.g702_line(8).variance
+
+    def count(self, severity: Severity) -> int:
+        return sum(f.severity is severity for f in self.findings)

@@ -447,6 +447,7 @@ def answer_key() -> dict[str, object]:
 
 
 def generate(out: Path) -> None:
+    write_json(out / "project.json", {"name": PROJECT, "general_contractor": GC})
     write_csv(
         out / "subcontracts.csv",
         ["sub_id", "sub_name", "trade", "original_contract_sum", "retainage_pct",

@@ -104,3 +104,15 @@ def certifiable_lines(review: ReviewInput) -> CertifiableLines:
     return CertifiableLines(
         lines=lines, contract_sum_to_date=contract_to_date, pct_complete=pct, retainage_rate=rate
     )
+
+
+def certifiable_g702(review: ReviewInput, cert: CertifiableLines) -> dict[int, Decimal]:
+    """G702 lines 1-9 as the GC would fill them in from the certifiable G703."""
+    l1 = review.subcontract.original_contract_sum
+    l3 = cert.contract_sum_to_date
+    l4 = cert.total_completed_stored
+    l5 = cert.total_retainage
+    l6 = l4 - l5
+    # Line 7 is line 6 of the GC's previous certificate, not the sub's previous request.
+    l7 = sum((r.total_completed_stored - r.retainage for r in review.prior_certified or []), ZERO)
+    return {1: l1, 2: l3 - l1, 3: l3, 4: l4, 5: l5, 6: l6, 7: l7, 8: l6 - l7, 9: l3 - l6}

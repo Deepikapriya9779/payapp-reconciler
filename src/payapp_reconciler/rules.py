@@ -77,7 +77,10 @@ def rule(rule_id: str, name: str) -> Callable[[RuleCheck], RuleCheck]:
 
 
 def run_rules(review: ReviewInput, config: ReviewConfig | None = None) -> list[Finding]:
-    ctx = build_context(review, config)
+    return apply_rules(build_context(review, config))
+
+
+def apply_rules(ctx: ReviewContext) -> list[Finding]:
     findings: list[Finding] = []
     for r in RULES:
         make = functools.partial(Finding, rule_id=r.rule_id, rule_name=r.name)

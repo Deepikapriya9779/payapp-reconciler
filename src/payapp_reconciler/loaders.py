@@ -12,7 +12,7 @@ from typing import TypeVar
 
 from pydantic import BaseModel, ValidationError
 
-from .models import ChangeOrder, G702Summary, G703Row, SovLine, Subcontract
+from .models import ChangeOrder, G702Summary, G703Row, ProjectInfo, SovLine, Subcontract
 
 M = TypeVar("M", bound=BaseModel)
 
@@ -26,6 +26,7 @@ class ReviewInput:
     """Everything needed to review one subcontractor's application."""
 
     project_dir: Path
+    project: ProjectInfo
     app_no: int
     subcontract: Subcontract
     sov: list[SovLine]
@@ -89,6 +90,17 @@ def read_g702(path: Path, label: str | None = None) -> G702Summary:
         raise LoadError(f"{label}: {_describe(err)}") from None
 
 
+def read_project_info(project_dir: Path) -> ProjectInfo:
+    """project.json is optional; without it the folder name is the project name."""
+    path = project_dir / "project.json"
+    if not path.is_file():
+        return ProjectInfo(name=project_dir.resolve().name)
+    try:
+        return ProjectInfo.model_validate_json(path.read_text(encoding="utf-8"))
+    except ValidationError as err:
+        raise LoadError(f"project.json: {_describe(err)}") from None
+
+
 def load_review(project_dir: Path, sub_id: str, app_no: int) -> ReviewInput:
     """Load the trusted contract data, the prior certificate and the submitted application."""
     project_dir = Path(project_dir)
@@ -131,6 +143,7 @@ def load_review(project_dir: Path, sub_id: str, app_no: int) -> ReviewInput:
 
     return ReviewInput(
         project_dir=project_dir,
+        project=read_project_info(project_dir),
         app_no=app_no,
         subcontract=subcontract,
         sov=sov,

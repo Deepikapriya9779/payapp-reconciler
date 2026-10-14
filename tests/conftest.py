@@ -20,6 +20,7 @@ from payapp_reconciler.models import (
     Finding,
     G702Summary,
     G703Row,
+    ProjectInfo,
     SovLine,
     Subcontract,
 )
@@ -151,6 +152,7 @@ def review(
     rows = CURRENT if rows is None else rows
     return ReviewInput(
         project_dir=Path("."),
+        project=ProjectInfo(name="Test Project", general_contractor="Test GC"),
         app_no=app_no,
         subcontract=subcontract,
         sov=SOV,
